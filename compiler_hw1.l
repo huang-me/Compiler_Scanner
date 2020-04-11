@@ -12,14 +12,17 @@
 %}
 
 /* Define regular expression label */
-letter [a-zA-Z_]
-digit [0-9]
-id {letter}+({letter}|{digit})*
-inumber {digit}+
-fnumber ({digit}*\.{digit}+)
-ws      [\t]+
+letter      [a-zA-Z_]
+digit       [0-9]
+id          {letter}+({letter}|{digit})*
+inumber     {digit}+
+fnumber     ({digit}*\.{digit}+)
+ws          [ \t]+
+cppcomment  ([/]{2}.*)
+ccomment    ([/]\*.*[\n])
 
 /* Rules section */
+%START  str strdec comment
 %%
 
 "\n"        { line_num++; printf("%-8s \t NEWLINE\n", ""); }
@@ -32,29 +35,50 @@ ws      [\t]+
 "/"         { printf("%-8s \t %s\n", yytext, "QUO"); }
 "("         { printf("%-8s \t %s\n", yytext, "LPAREN"); }
 ")"         { printf("%-8s \t %s\n", yytext, "RPAREN"); }
+"{"         { printf("%-8s \t %s\n", yytext, "LBRACE"); }
+"}"         { printf("%-8s \t %s\n", yytext, "RBRACE"); }
+"["         { printf("%-8s \t %s\n", yytext, "RBRACK"); }
+"]"         { printf("%-8s \t %s\n", yytext, "RBRACK"); }
+"\""        { printf("%-8s \t %s\n", yytext, "QUOTA"); }
 "%"         { printf("%-8s \t %s\n", yytext, "REM"); }
+";"         { printf("%-8s \t %s\n", yytext, "SEMICOLON"); }
+","         { printf("%-8s \t %s\n", yytext, "COMMA"); }
 "float32"   { printf("%-8s \t %s\n", yytext, "FLOAT"); }
 "int32"     { printf("%-8s \t %s\n", yytext, "INT"); }
+"string"    { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN str; }
+"bool"      { printf("%-8s \t %s\n", yytext, "BOOL"); }
+"true"      { printf("%-8s \t %s\n", yytext, "TRUE"); }
+"false"     { printf("%-8s \t %s\n", yytext, "FALSE"); }
 "<"         { printf("%-8s \t %s\n", yytext, "LSS"); }
 ">"         { printf("%-8s \t %s\n", yytext, "GTR"); }
-">="         { printf("%-8s \t %s\n", yytext, "GEQ"); }
-"<="         { printf("%-8s \t %s\n", yytext, "LEQ"); }
-"=="         { printf("%-8s \t %s\n", yytext, "EQL"); }
-"!="         { printf("%-8s \t %s\n", yytext, "NEQ"); }
-"+="         { printf("%-8s \t %s\n", yytext, "ADD_ASSIGN"); }
-"-="         { printf("%-8s \t %s\n", yytext, "SUB_ASSIGN"); }
-"*="         { printf("%-8s \t %s\n", yytext, "MUL_ASSIGN"); }
-"/="         { printf("%-8s \t %s\n", yytext, "QUO_ASSIGN"); }
-"%="         { printf("%-8s \t %s\n", yytext, "REM_ASSIGN"); }
+">="        { printf("%-8s \t %s\n", yytext, "GEQ"); }
+"<="        { printf("%-8s \t %s\n", yytext, "LEQ"); }
+"=="        { printf("%-8s \t %s\n", yytext, "EQL"); }
+"!="        { printf("%-8s \t %s\n", yytext, "NEQ"); }
+"+="        { printf("%-8s \t %s\n", yytext, "ADD_ASSIGN"); }
+"-="        { printf("%-8s \t %s\n", yytext, "SUB_ASSIGN"); }
+"*="        { printf("%-8s \t %s\n", yytext, "MUL_ASSIGN"); }
+"/="        { printf("%-8s \t %s\n", yytext, "QUO_ASSIGN"); }
+"%="        { printf("%-8s \t %s\n", yytext, "REM_ASSIGN"); }
+"var"       { printf("%-8s \t %s\n", yytext, "VAR"); }
+"if"        { printf("%-8s \t %s\n", yytext, "IF"); }
+"for"       { printf("%-8s \t %s\n", yytext, "FOR"); }
+"else"      { printf("%-8s \t %s\n", yytext, "ELSE"); }
 
 
-{id}        { printf("%-8s \t %s\n", yytext, "IDENT"); }
-{fnumber}   { printf("%-8s \t %s\n", yytext, "FLOAT_LIT"); }
-{inumber}   { printf("%-8s \t %s\n", yytext, "INT_LIT"); }
-{ws}        {;}
+{id}            { printf("%-8s \t %s\n", yytext, "IDENT"); }
+{fnumber}       { printf("%-8s \t %s\n", yytext, "FLOAT_LIT"); }
+{inumber}       { printf("%-8s \t %s\n", yytext, "INT_LIT"); }
+{cppcomment}    { printf("%-8s \t %s\n", yytext, "C++ Comment"); comment_num++; }
+{ccomment}      { printf("%-8s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; BEGIN comment; }
+{ws}            {;}
 
-<<EOF>>     { line_num++; yyterminate(); }
-.           {;}
+<comment>.*\*[/]  { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; }
+<comment>.*[\n]   { printf("%-8s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; }
+<str>\"/{id}    { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN strdec; }
+<strdec>{id}/\" { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN 0; }
+<<EOF>>         { line_num++; yyterminate(); }
+.               {;}
 
 
 %%
