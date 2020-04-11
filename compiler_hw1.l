@@ -17,19 +17,41 @@ digit [0-9]
 id {letter}+({letter}|{digit})*
 inumber {digit}+
 fnumber ({digit}*\.{digit}+)
+ws      [\t]+
 
 /* Rules section */
 %%
 
-"\n"        { line_num++; printf("\t \t %s\n", "NEWLINE"); }
+"\n"        { line_num++; printf("%-8s \t NEWLINE\n", ""); }
 "+"         { printf("%-8s \t %s\n", yytext, "ADD"); }
-"++"         { printf("%-8s \t %s\n", yytext, "INC"); }
+"="         { printf("%-8s \t %s\n", yytext, "ASSIGN"); }
+"++"        { printf("%-8s \t %s\n", yytext, "INC"); }
 "-"         { printf("%-8s \t %s\n", yytext, "SUB"); }
-"--"         { printf("%-8s \t %s\n", yytext, "DEC"); }
+"--"        { printf("%-8s \t %s\n", yytext, "DEC"); }
 "*"         { printf("%-8s \t %s\n", yytext, "MUL"); }
 "/"         { printf("%-8s \t %s\n", yytext, "QUO"); }
+"("         { printf("%-8s \t %s\n", yytext, "LPAREN"); }
+")"         { printf("%-8s \t %s\n", yytext, "RPAREN"); }
 "%"         { printf("%-8s \t %s\n", yytext, "REM"); }
+"float32"   { printf("%-8s \t %s\n", yytext, "FLOAT"); }
+"int32"     { printf("%-8s \t %s\n", yytext, "INT"); }
+"<"         { printf("%-8s \t %s\n", yytext, "LSS"); }
+">"         { printf("%-8s \t %s\n", yytext, "GTR"); }
+">="         { printf("%-8s \t %s\n", yytext, "GEQ"); }
+"<="         { printf("%-8s \t %s\n", yytext, "LEQ"); }
+"=="         { printf("%-8s \t %s\n", yytext, "EQL"); }
+"!="         { printf("%-8s \t %s\n", yytext, "NEQ"); }
+"+="         { printf("%-8s \t %s\n", yytext, "ADD_ASSIGN"); }
+"-="         { printf("%-8s \t %s\n", yytext, "SUB_ASSIGN"); }
+"*="         { printf("%-8s \t %s\n", yytext, "MUL_ASSIGN"); }
+"/="         { printf("%-8s \t %s\n", yytext, "QUO_ASSIGN"); }
+"%="         { printf("%-8s \t %s\n", yytext, "REM_ASSIGN"); }
+
+
 {id}        { printf("%-8s \t %s\n", yytext, "IDENT"); }
+{fnumber}   { printf("%-8s \t %s\n", yytext, "FLOAT_LIT"); }
+{inumber}   { printf("%-8s \t %s\n", yytext, "INT_LIT"); }
+{ws}        {;}
 
 <<EOF>>     { line_num++; yyterminate(); }
 .           {;}
