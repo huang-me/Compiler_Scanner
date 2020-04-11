@@ -1,0 +1,307 @@
+=================+===============
+          Sample | Accept
+=================+===============
+ in01_arithmetic | [32m✔[0m
+=================+===============
+ in02_conversion | [32m✔[0m
+=================+===============
+ in03_relational | [32m✔[0m
+=================+===============
+ in04_assignment | [32m✔[0m
+=================+===============
+in05_declaration | [32m✔[0m
+=================+===============
+         in06_if | [32m✔[0m
+=================+===============
+    in07_if_else | [32m✔[0m
+=================+===============
+        in08_for | [32m✔[0m
+=================+===============
+    in09_comment | [31m✘[0m
+-----------------+---------------
+// I like to learn Compiler. 	 C++ Comment			// I like to learn Compiler. 	 C++ Comment
+         	 NEWLINE					         	 NEWLINE
+/        	 QUO					      |	/*
+*        	 MUL					      |	        	 C Comment
+         	 NEWLINE				      |	Construct a compiler is very fun.
+Construct 	 IDENT					      |	        	 C Comment
+a        	 IDENT					      |	*/       	 C Comment
+compiler 	 IDENT					      <
+is       	 IDENT					      <
+very     	 IDENT					      <
+fun      	 IDENT					      <
+         	 NEWLINE				      <
+*        	 MUL					      <
+/        	 QUO					      <
+
+Finish scanning,						Finish scanning,
+total line: 4							total line: 4
+comment line: 1						      |	comment line: 4
+
+=================+===============
+      in10_print | [32m✔[0m
+=================+===============
+    in11_monster | [31m✘[0m
+-----------------+---------------
+var      	 VAR						var      	 VAR
+x        	 IDENT						x        	 IDENT
+int32    	 INT						int32    	 INT
+=        	 ASSIGN						=        	 ASSIGN
+9        	 INT_LIT					9        	 INT_LIT
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+y        	 IDENT						y        	 IDENT
+int32    	 INT						int32    	 INT
+=        	 ASSIGN						=        	 ASSIGN
+-        	 SUB						-        	 SUB
+87       	 INT_LIT					87       	 INT_LIT
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+z        	 IDENT						z        	 IDENT
+int32    	 INT						int32    	 INT
+=        	 ASSIGN						=        	 ASSIGN
+23       	 INT_LIT					23       	 INT_LIT
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+_f_123   	 IDENT						_f_123   	 IDENT
+float32  	 FLOAT						float32  	 FLOAT
+=        	 ASSIGN						=        	 ASSIGN
+-        	 SUB						-        	 SUB
+212.3    	 FLOAT_LIT					212.3    	 FLOAT_LIT
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+a        	 IDENT						a        	 IDENT
+int32    	 INT						int32    	 INT
+=        	 ASSIGN						=        	 ASSIGN
+int32    	 INT						int32    	 INT
+(        	 LPAREN						(        	 LPAREN
+_f_123   	 IDENT						_f_123   	 IDENT
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+b        	 IDENT						b        	 IDENT
+int32    	 INT						int32    	 INT
+         	 NEWLINE					         	 NEWLINE
+if       	 IF						if       	 IF
+x        	 IDENT						x        	 IDENT
+<        	 LSS						<        	 LSS
+a        	 IDENT						a        	 IDENT
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+x        	 IDENT						x        	 IDENT
+++       	 INC						++       	 INC
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+else     	 ELSE						else     	 ELSE
+if       	 IF						if       	 IF
+x        	 IDENT						x        	 IDENT
+<        	 LSS						<        	 LSS
+b        	 IDENT						b        	 IDENT
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+print    	 PRINT						print    	 PRINT
+(        	 LPAREN						(        	 LPAREN
+x        	 IDENT						x        	 IDENT
+<=       	 LEQ						<=       	 LEQ
+z        	 IDENT						z        	 IDENT
+||       	 LOR						||       	 LOR
+x        	 IDENT						x        	 IDENT
+<=       	 LEQ						<=       	 LEQ
+(        	 LPAREN						(        	 LPAREN
+y        	 IDENT						y        	 IDENT
+-        	 SUB						-        	 SUB
+z        	 IDENT						z        	 IDENT
+)        	 RPAREN						)        	 RPAREN
+&&       	 LAND						&&       	 LAND
+!        	 NOT						!        	 NOT
+(        	 LPAREN						(        	 LPAREN
+y        	 IDENT						y        	 IDENT
+<=       	 LEQ						<=       	 LEQ
+z        	 IDENT						z        	 IDENT
+)        	 RPAREN						)        	 RPAREN
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+else     	 ELSE						else     	 ELSE
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+x        	 IDENT						x        	 IDENT
+--       	 DEC						--       	 DEC
+         	 NEWLINE					         	 NEWLINE
+if       	 IF						if       	 IF
+x        	 IDENT						x        	 IDENT
+>        	 GTR						>        	 GTR
+a        	 IDENT						a        	 IDENT
+&&       	 LAND						&&       	 LAND
+x        	 IDENT						x        	 IDENT
+<        	 LSS						<        	 LSS
+b        	 IDENT						b        	 IDENT
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+x        	 IDENT						x        	 IDENT
+++       	 INC						++       	 INC
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+else     	 ELSE						else     	 ELSE
+if       	 IF						if       	 IF
+x        	 IDENT						x        	 IDENT
+>        	 GTR						>        	 GTR
+b        	 IDENT						b        	 IDENT
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+x        	 IDENT						x        	 IDENT
+--       	 DEC						--       	 DEC
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+         	 NEWLINE					         	 NEWLINE
+print    	 PRINT						print    	 PRINT
+(        	 LPAREN						(        	 LPAREN
+x        	 IDENT						x        	 IDENT
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+gggggggggggg 	 IDENT						gggggggggggg 	 IDENT
+float32  	 FLOAT						float32  	 FLOAT
+         	 NEWLINE					         	 NEWLINE
+gggggggggggg 	 IDENT						gggggggggggg 	 IDENT
++=       	 ADD_ASSIGN					+=       	 ADD_ASSIGN
+float32  	 FLOAT						float32  	 FLOAT
+(        	 LPAREN						(        	 LPAREN
+x        	 IDENT						x        	 IDENT
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+println  	 PRINTLN					println  	 PRINTLN
+(        	 LPAREN						(        	 LPAREN
+gggggggggggg 	 IDENT						gggggggggggg 	 IDENT
+<        	 LSS						<        	 LSS
+3.0      	 FLOAT_LIT					3.0      	 FLOAT_LIT
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+TRUE     	 IDENT						TRUE     	 IDENT
+bool     	 BOOL						bool     	 BOOL
+=        	 ASSIGN						=        	 ASSIGN
+false    	 FALSE						false    	 FALSE
+         	 NEWLINE					         	 NEWLINE
+if       	 IF						if       	 IF
+!        	 NOT						!        	 NOT
+TRUE     	 IDENT						TRUE     	 IDENT
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+var      	 VAR						var      	 VAR
+STRING   	 IDENT						STRING   	 IDENT
+string   	 STRING						string   	 STRING
+=        	 ASSIGN						=        	 ASSIGN
+"        	 QUOTA						"        	 QUOTA
+string   	 STRING						string   	 STRING
+"        	 QUOTA						"        	 QUOTA
+         	 NEWLINE					         	 NEWLINE
+println  	 PRINTLN					println  	 PRINTLN
+(        	 LPAREN						(        	 LPAREN
+STRING   	 IDENT						STRING   	 IDENT
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+         	 NEWLINE					         	 NEWLINE
+/        	 QUO					      |	/*OuO
+*        	 MUL					      |	        	 C Comment
+OuO      	 IDENT					      |		Construct a compiler is very fun.
+         	 NEWLINE				      |	        	 C Comment
+Construct 	 IDENT					      |
+a        	 IDENT					      |	        	 C Comment
+compiler 	 IDENT					      |		NULL
+is       	 IDENT					      |	        	 C Comment
+very     	 IDENT					      |		NEWLINE
+fun      	 IDENT					      |	        	 C Comment
+         	 NEWLINE				      |		x -= 1000
+         	 NEWLINE				      |	        	 C Comment
+NULL     	 IDENT					      |		\n
+         	 NEWLINE				      |	        	 C Comment
+NEWLINE  	 IDENT					      |		%^#&!#&@%&^%#&*@%
+         	 NEWLINE				      |	        	 C Comment
+x        	 IDENT					      |		*/       	 C Comment
+-=       	 SUB_ASSIGN				      <
+1000     	 INT_LIT				      <
+         	 NEWLINE				      <
+n        	 IDENT					      <
+         	 NEWLINE				      <
+%        	 REM					      <
+!        	 NOT					      <
+%        	 REM					      <
+%        	 REM					      <
+*        	 MUL					      <
+%        	 REM					      <
+         	 NEWLINE				      <
+*        	 MUL					      <
+/        	 QUO					      <
+x        	 IDENT						x        	 IDENT
+++       	 INC						++       	 INC
+// Increase x /* after comment */ 	 C++ Comment		// Increase x /* after comment */ 	 C++ Comment
+         	 NEWLINE					         	 NEWLINE
+/* */    	 C Comment				      |	/* */       	 C Comment
+/        	 QUO					      |	/*
+*        	 MUL					      |	        	 C Comment
+         	 NEWLINE				      |			*/       	 C Comment
+*        	 MUL					      |	/* */       	 C Comment
+/        	 QUO					      <
+/* */    	 C Comment				      <
+         	 NEWLINE					         	 NEWLINE
+         	 NEWLINE					         	 NEWLINE
+for      	 FOR						for      	 FOR
+x        	 IDENT						x        	 IDENT
+>        	 GTR						>        	 GTR
+0        	 INT_LIT					0        	 INT_LIT
+{        	 LBRACE						{        	 LBRACE
+         	 NEWLINE					         	 NEWLINE
+x        	 IDENT						x        	 IDENT
++=       	 ADD_ASSIGN					+=       	 ADD_ASSIGN
+(        	 LPAREN						(        	 LPAREN
+9        	 INT_LIT					9        	 INT_LIT
+*        	 MUL						*        	 MUL
+-        	 SUB						-        	 SUB
+8        	 INT_LIT					8        	 INT_LIT
+)        	 RPAREN						)        	 RPAREN
+/        	 QUO						/        	 QUO
+a        	 IDENT						a        	 IDENT
++        	 ADD						+        	 ADD
+3        	 INT_LIT					3        	 INT_LIT
+-        	 SUB						-        	 SUB
+(        	 LPAREN						(        	 LPAREN
+100      	 INT_LIT					100      	 INT_LIT
+%        	 REM						%        	 REM
+7        	 INT_LIT					7        	 INT_LIT
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+x        	 IDENT						x        	 IDENT
+%=       	 REM_ASSIGN					%=       	 REM_ASSIGN
+4        	 INT_LIT					4        	 INT_LIT
+         	 NEWLINE					         	 NEWLINE
+println  	 PRINTLN					println  	 PRINTLN
+(        	 LPAREN						(        	 LPAREN
+x        	 IDENT						x        	 IDENT
++        	 ADD						+        	 ADD
+3        	 INT_LIT					3        	 INT_LIT
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+         	 NEWLINE					         	 NEWLINE
+println  	 PRINTLN					println  	 PRINTLN
+(        	 LPAREN						(        	 LPAREN
+"        	 QUOTA						"        	 QUOTA
+Finish   	 STRING						Finish   	 STRING
+"        	 QUOTA						"        	 QUOTA
+)        	 RPAREN						)        	 RPAREN
+         	 NEWLINE					         	 NEWLINE
+}        	 RBRACE						}        	 RBRACE
+
+Finish scanning,						Finish scanning,
+total line: 47							total line: 47
+comment line: 3						      |	comment line: 11
+
+=================+===============
+Correct rate: 81.81818181818181%
+Obtained/Total scores: 90.0/110

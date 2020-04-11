@@ -19,7 +19,7 @@ inumber     {digit}+
 fnumber     ({digit}*\.{digit}+)
 ws          [ \t]+
 cppcomment  ([/]{2}.*)
-ccomment    ([/]\*[\n])
+comment1    ([/]{1}\*.*\*[/])
 
 /* Rules section */
 %START  str end comment print println
@@ -75,11 +75,9 @@ ccomment    ([/]\*[\n])
 {fnumber}       { printf("%-8s \t %s\n", yytext, "FLOAT_LIT"); }
 {inumber}       { printf("%-8s \t %s\n", yytext, "INT_LIT"); }
 {cppcomment}    { printf("%-8s \t %s\n", yytext, "C++ Comment"); comment_num++; }
-{ccomment}      { printf("%s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; BEGIN comment; }
+{comment1}      { printf("%-8s \t %s\n", yytext, "C Comment"); comment_num++; }
 {ws}            {;}
 
-<comment>.*\*[/]    { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; }
-<comment>.*[\n]     { printf("%s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; }
 <str>\"/{id}        { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <print>\"/{id}      { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <println>\"/{id}    { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
