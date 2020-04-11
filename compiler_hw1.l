@@ -19,10 +19,10 @@ inumber     {digit}+
 fnumber     ({digit}*\.{digit}+)
 ws          [ \t]+
 cppcomment  ([/]{2}.*)
-ccomment    ([/]\*.*[\n])
+ccomment    ([/]\*[\n])
 
 /* Rules section */
-%START  str strdec comment
+%START  str end comment print println
 %%
 
 "\n"        { line_num++; printf("%-8s \t NEWLINE\n", ""); }
@@ -43,6 +43,9 @@ ccomment    ([/]\*.*[\n])
 "%"         { printf("%-8s \t %s\n", yytext, "REM"); }
 ";"         { printf("%-8s \t %s\n", yytext, "SEMICOLON"); }
 ","         { printf("%-8s \t %s\n", yytext, "COMMA"); }
+"!"         { printf("%-8s \t %s\n", yytext, "NOT"); }
+"&&"        { printf("%-8s \t %s\n", yytext, "LAND"); }
+"||"        { printf("%-8s \t %s\n", yytext, "LOR"); }
 "float32"   { printf("%-8s \t %s\n", yytext, "FLOAT"); }
 "int32"     { printf("%-8s \t %s\n", yytext, "INT"); }
 "string"    { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN str; }
@@ -64,21 +67,25 @@ ccomment    ([/]\*.*[\n])
 "if"        { printf("%-8s \t %s\n", yytext, "IF"); }
 "for"       { printf("%-8s \t %s\n", yytext, "FOR"); }
 "else"      { printf("%-8s \t %s\n", yytext, "ELSE"); }
+"print"     { printf("%-8s \t %s\n", yytext, "PRINT"); BEGIN print; }
+"println"   { printf("%-8s \t %s\n", yytext, "PRINTLN"); BEGIN println; }
 
 
 {id}            { printf("%-8s \t %s\n", yytext, "IDENT"); }
 {fnumber}       { printf("%-8s \t %s\n", yytext, "FLOAT_LIT"); }
 {inumber}       { printf("%-8s \t %s\n", yytext, "INT_LIT"); }
 {cppcomment}    { printf("%-8s \t %s\n", yytext, "C++ Comment"); comment_num++; }
-{ccomment}      { printf("%-8s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; BEGIN comment; }
+{ccomment}      { printf("%s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; BEGIN comment; }
 {ws}            {;}
 
-<comment>.*\*[/]  { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; }
-<comment>.*[\n]   { printf("%-8s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; }
-<str>\"/{id}    { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN strdec; }
-<strdec>{id}/\" { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN 0; }
-<<EOF>>         { line_num++; yyterminate(); }
-.               {;}
+<comment>.*\*[/]    { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; }
+<comment>.*[\n]     { printf("%s \t\t\t %s\n", yytext, "C Comment"); comment_num++; line_num++; }
+<str>\"/{id}        { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
+<print>\"/{id}      { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
+<println>\"/{id}    { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
+<end>{id}/\"        { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN 0; }
+<<EOF>>             { line_num++; yyterminate(); }
+.                   {;}
 
 
 %%
