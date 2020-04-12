@@ -1,307 +1,202 @@
-=================+===============
+=================+=======================================
           Sample | Accept
-=================+===============
- in01_arithmetic | [32m✔[0m
-=================+===============
- in02_conversion | [32m✔[0m
-=================+===============
- in03_relational | [32m✔[0m
-=================+===============
- in04_assignment | [32m✔[0m
-=================+===============
-in05_declaration | [32m✔[0m
-=================+===============
-         in06_if | [32m✔[0m
-=================+===============
-    in07_if_else | [32m✔[0m
-=================+===============
-        in08_for | [32m✔[0m
-=================+===============
+=================+=======================================
+ in01_arithmetic | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in01_arithmetic_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in01_arithmetic.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
+ in02_conversion | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in02_conversion_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in02_conversion.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
+ in03_relational | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in03_relational_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in03_relational.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
+ in04_assignment | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in04_assignment_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in04_assignment.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
+in05_declaration | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in05_declaration_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in05_declaration.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+[1mindex b80d160..e0fd2b1[m
+[1m--- a/tmp/output/in05_declaration_1586680259.out[m
+[1m+++ b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in05_declaration.out[m
+[36m@@ -13,7 +13,7 @@[m [m__z      	 IDENT[m
+string   	 STRING[m
+=        	 ASSIGN[m
+"        	 QUOTA[m
+OuO      	 STRING[31m[-_LIT-][m
+"        	 QUOTA[m
+         	 NEWLINE[m
+var      	 VAR[m
+
+=================+=======================================
+         in06_if | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in06_if_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in06_if.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
+    in07_if_else | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in07_if_else_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in07_if_else.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
+        in08_for | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in08_for_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in08_for.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
     in09_comment | [31m✘[0m
------------------+---------------
-// I like to learn Compiler. 	 C++ Comment			// I like to learn Compiler. 	 C++ Comment
-         	 NEWLINE					         	 NEWLINE
-/        	 QUO					      |	/*
-*        	 MUL					      |	        	 C Comment
-         	 NEWLINE				      |	Construct a compiler is very fun.
-Construct 	 IDENT					      |	        	 C Comment
-a        	 IDENT					      |	*/       	 C Comment
-compiler 	 IDENT					      <
-is       	 IDENT					      <
-very     	 IDENT					      <
-fun      	 IDENT					      <
-         	 NEWLINE				      <
-*        	 MUL					      <
-/        	 QUO					      <
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in09_comment_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in09_comment.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+[1mindex 82002d2..34c8d2d[m
+[1m--- a/tmp/output/in09_comment_1586680259.out[m
+[1m+++ b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in09_comment.out[m
+[36m@@ -1,9 +1,9 @@[m
+// I like to learn Compiler. 	 C++ Comment[m
+         	 NEWLINE[m
+/*[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+Construct a compiler is very fun.[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+*/       	 C Comment[m
 
-Finish scanning,						Finish scanning,
-total line: 4							total line: 4
-comment line: 1						      |	comment line: 4
+Finish scanning,[m
 
-=================+===============
-      in10_print | [32m✔[0m
-=================+===============
+=================+=======================================
+      in10_print | [31m✘[0m
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in10_print_1586680259.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in10_print.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+
+=================+=======================================
     in11_monster | [31m✘[0m
------------------+---------------
-var      	 VAR						var      	 VAR
-x        	 IDENT						x        	 IDENT
-int32    	 INT						int32    	 INT
-=        	 ASSIGN						=        	 ASSIGN
-9        	 INT_LIT					9        	 INT_LIT
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-y        	 IDENT						y        	 IDENT
-int32    	 INT						int32    	 INT
-=        	 ASSIGN						=        	 ASSIGN
--        	 SUB						-        	 SUB
-87       	 INT_LIT					87       	 INT_LIT
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-z        	 IDENT						z        	 IDENT
-int32    	 INT						int32    	 INT
-=        	 ASSIGN						=        	 ASSIGN
-23       	 INT_LIT					23       	 INT_LIT
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-_f_123   	 IDENT						_f_123   	 IDENT
-float32  	 FLOAT						float32  	 FLOAT
-=        	 ASSIGN						=        	 ASSIGN
--        	 SUB						-        	 SUB
-212.3    	 FLOAT_LIT					212.3    	 FLOAT_LIT
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-a        	 IDENT						a        	 IDENT
-int32    	 INT						int32    	 INT
-=        	 ASSIGN						=        	 ASSIGN
-int32    	 INT						int32    	 INT
-(        	 LPAREN						(        	 LPAREN
-_f_123   	 IDENT						_f_123   	 IDENT
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-b        	 IDENT						b        	 IDENT
-int32    	 INT						int32    	 INT
-         	 NEWLINE					         	 NEWLINE
-if       	 IF						if       	 IF
-x        	 IDENT						x        	 IDENT
-<        	 LSS						<        	 LSS
-a        	 IDENT						a        	 IDENT
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-x        	 IDENT						x        	 IDENT
-++       	 INC						++       	 INC
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
-else     	 ELSE						else     	 ELSE
-if       	 IF						if       	 IF
-x        	 IDENT						x        	 IDENT
-<        	 LSS						<        	 LSS
-b        	 IDENT						b        	 IDENT
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-print    	 PRINT						print    	 PRINT
-(        	 LPAREN						(        	 LPAREN
-x        	 IDENT						x        	 IDENT
-<=       	 LEQ						<=       	 LEQ
-z        	 IDENT						z        	 IDENT
-||       	 LOR						||       	 LOR
-x        	 IDENT						x        	 IDENT
-<=       	 LEQ						<=       	 LEQ
-(        	 LPAREN						(        	 LPAREN
-y        	 IDENT						y        	 IDENT
--        	 SUB						-        	 SUB
-z        	 IDENT						z        	 IDENT
-)        	 RPAREN						)        	 RPAREN
-&&       	 LAND						&&       	 LAND
-!        	 NOT						!        	 NOT
-(        	 LPAREN						(        	 LPAREN
-y        	 IDENT						y        	 IDENT
-<=       	 LEQ						<=       	 LEQ
-z        	 IDENT						z        	 IDENT
-)        	 RPAREN						)        	 RPAREN
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
-else     	 ELSE						else     	 ELSE
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-x        	 IDENT						x        	 IDENT
---       	 DEC						--       	 DEC
-         	 NEWLINE					         	 NEWLINE
-if       	 IF						if       	 IF
-x        	 IDENT						x        	 IDENT
->        	 GTR						>        	 GTR
-a        	 IDENT						a        	 IDENT
-&&       	 LAND						&&       	 LAND
-x        	 IDENT						x        	 IDENT
-<        	 LSS						<        	 LSS
-b        	 IDENT						b        	 IDENT
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-x        	 IDENT						x        	 IDENT
-++       	 INC						++       	 INC
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
-else     	 ELSE						else     	 ELSE
-if       	 IF						if       	 IF
-x        	 IDENT						x        	 IDENT
->        	 GTR						>        	 GTR
-b        	 IDENT						b        	 IDENT
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-x        	 IDENT						x        	 IDENT
---       	 DEC						--       	 DEC
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
-         	 NEWLINE					         	 NEWLINE
-print    	 PRINT						print    	 PRINT
-(        	 LPAREN						(        	 LPAREN
-x        	 IDENT						x        	 IDENT
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-gggggggggggg 	 IDENT						gggggggggggg 	 IDENT
-float32  	 FLOAT						float32  	 FLOAT
-         	 NEWLINE					         	 NEWLINE
-gggggggggggg 	 IDENT						gggggggggggg 	 IDENT
-+=       	 ADD_ASSIGN					+=       	 ADD_ASSIGN
-float32  	 FLOAT						float32  	 FLOAT
-(        	 LPAREN						(        	 LPAREN
-x        	 IDENT						x        	 IDENT
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-println  	 PRINTLN					println  	 PRINTLN
-(        	 LPAREN						(        	 LPAREN
-gggggggggggg 	 IDENT						gggggggggggg 	 IDENT
-<        	 LSS						<        	 LSS
-3.0      	 FLOAT_LIT					3.0      	 FLOAT_LIT
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-TRUE     	 IDENT						TRUE     	 IDENT
-bool     	 BOOL						bool     	 BOOL
-=        	 ASSIGN						=        	 ASSIGN
-false    	 FALSE						false    	 FALSE
-         	 NEWLINE					         	 NEWLINE
-if       	 IF						if       	 IF
-!        	 NOT						!        	 NOT
-TRUE     	 IDENT						TRUE     	 IDENT
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-var      	 VAR						var      	 VAR
-STRING   	 IDENT						STRING   	 IDENT
-string   	 STRING						string   	 STRING
-=        	 ASSIGN						=        	 ASSIGN
-"        	 QUOTA						"        	 QUOTA
-string   	 STRING						string   	 STRING
-"        	 QUOTA						"        	 QUOTA
-         	 NEWLINE					         	 NEWLINE
-println  	 PRINTLN					println  	 PRINTLN
-(        	 LPAREN						(        	 LPAREN
-STRING   	 IDENT						STRING   	 IDENT
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
-         	 NEWLINE					         	 NEWLINE
-/        	 QUO					      |	/*OuO
-*        	 MUL					      |	        	 C Comment
-OuO      	 IDENT					      |		Construct a compiler is very fun.
-         	 NEWLINE				      |	        	 C Comment
-Construct 	 IDENT					      |
-a        	 IDENT					      |	        	 C Comment
-compiler 	 IDENT					      |		NULL
-is       	 IDENT					      |	        	 C Comment
-very     	 IDENT					      |		NEWLINE
-fun      	 IDENT					      |	        	 C Comment
-         	 NEWLINE				      |		x -= 1000
-         	 NEWLINE				      |	        	 C Comment
-NULL     	 IDENT					      |		\n
-         	 NEWLINE				      |	        	 C Comment
-NEWLINE  	 IDENT					      |		%^#&!#&@%&^%#&*@%
-         	 NEWLINE				      |	        	 C Comment
-x        	 IDENT					      |		*/       	 C Comment
--=       	 SUB_ASSIGN				      <
-1000     	 INT_LIT				      <
-         	 NEWLINE				      <
-n        	 IDENT					      <
-         	 NEWLINE				      <
-%        	 REM					      <
-!        	 NOT					      <
-%        	 REM					      <
-%        	 REM					      <
-*        	 MUL					      <
-%        	 REM					      <
-         	 NEWLINE				      <
-*        	 MUL					      <
-/        	 QUO					      <
-x        	 IDENT						x        	 IDENT
-++       	 INC						++       	 INC
-// Increase x /* after comment */ 	 C++ Comment		// Increase x /* after comment */ 	 C++ Comment
-         	 NEWLINE					         	 NEWLINE
-/* */    	 C Comment				      |	/* */       	 C Comment
-/        	 QUO					      |	/*
-*        	 MUL					      |	        	 C Comment
-         	 NEWLINE				      |			*/       	 C Comment
-*        	 MUL					      |	/* */       	 C Comment
-/        	 QUO					      <
-/* */    	 C Comment				      <
-         	 NEWLINE					         	 NEWLINE
-         	 NEWLINE					         	 NEWLINE
-for      	 FOR						for      	 FOR
-x        	 IDENT						x        	 IDENT
->        	 GTR						>        	 GTR
-0        	 INT_LIT					0        	 INT_LIT
-{        	 LBRACE						{        	 LBRACE
-         	 NEWLINE					         	 NEWLINE
-x        	 IDENT						x        	 IDENT
-+=       	 ADD_ASSIGN					+=       	 ADD_ASSIGN
-(        	 LPAREN						(        	 LPAREN
-9        	 INT_LIT					9        	 INT_LIT
-*        	 MUL						*        	 MUL
--        	 SUB						-        	 SUB
-8        	 INT_LIT					8        	 INT_LIT
-)        	 RPAREN						)        	 RPAREN
-/        	 QUO						/        	 QUO
-a        	 IDENT						a        	 IDENT
-+        	 ADD						+        	 ADD
-3        	 INT_LIT					3        	 INT_LIT
--        	 SUB						-        	 SUB
-(        	 LPAREN						(        	 LPAREN
-100      	 INT_LIT					100      	 INT_LIT
-%        	 REM						%        	 REM
-7        	 INT_LIT					7        	 INT_LIT
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-x        	 IDENT						x        	 IDENT
-%=       	 REM_ASSIGN					%=       	 REM_ASSIGN
-4        	 INT_LIT					4        	 INT_LIT
-         	 NEWLINE					         	 NEWLINE
-println  	 PRINTLN					println  	 PRINTLN
-(        	 LPAREN						(        	 LPAREN
-x        	 IDENT						x        	 IDENT
-+        	 ADD						+        	 ADD
-3        	 INT_LIT					3        	 INT_LIT
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
-         	 NEWLINE					         	 NEWLINE
-println  	 PRINTLN					println  	 PRINTLN
-(        	 LPAREN						(        	 LPAREN
-"        	 QUOTA						"        	 QUOTA
-Finish   	 STRING						Finish   	 STRING
-"        	 QUOTA						"        	 QUOTA
-)        	 RPAREN						)        	 RPAREN
-         	 NEWLINE					         	 NEWLINE
-}        	 RBRACE						}        	 RBRACE
+-----------------+---------------------------------------
+[1mdiff --git a/tmp/output/in11_monster_1586680260.out b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in11_monster.out[m
+[1mold mode 100644[m
+[1mnew mode 100755[m
+[1mindex 9a7325c..d752354[m
+[1m--- a/tmp/output/in11_monster_1586680260.out[m
+[1m+++ b/home/amos/Desktop/Compiler_E84061228_HW1/answer/in11_monster.out[m
+[36m@@ -150,7 +150,7 @@[m [mSTRING   	 IDENT[m
+string   	 STRING[m
+=        	 ASSIGN[m
+"        	 QUOTA[m
+string   	 STRING[31m[-_LIT-][m
+"        	 QUOTA[m
+         	 NEWLINE[m
+println  	 PRINTLN[m
+[36m@@ -163,41 +163,80 @@[m [mSTRING   	 IDENT[m
+}        	 RBRACE[m
+         	 NEWLINE[m
+/*OuO[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+	Construct a compiler is very fun.[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
 
-Finish scanning,						Finish scanning,
-total line: 47							total line: 47
-comment line: 3						      |	comment line: 11
+        [31m[- -][m	 [31m[-NEWLINE-][m[32m{+C Comment+}[m
+	NULL[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+	NEWLINE[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+	x -= 1000[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+	\n[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+	%^#&!#&@%&^%#&*@%[m
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+	*/[32m{+       	 C Comment+}[m
+x[32m{+        	 IDENT+}[m
+++ [32m{+      	 INC+}[m
+// Increase x /* after comment */ 	[31m[-		-][m C[32m{++++}[m Comment
+[32m{+         +}[m	[32m{+ NEWLINE+}[m
+/* */ [32m{+      	 C Comment+}[m
+/*
+ [31m[-		-][m[32m{+       +}[m	 C Comment
+		*/ [32m{+      	 C Comment+}[m
+/* */ [31m[-		-][m[32m{+      +}[m	 C Comment
+         	 NEWLINE
+[32m{+         +}[m	[32m{+ NEWLINE+}[m
+for [31m[-x-][m [31m[->-][m [31m[-0-][m [31m[-{-][m [31m[-		-][m[32m{+ +}[m	 [31m[-C-][m[32m{+FOR+}[m
+[32m{+x       +}[m [31m[-Comment-][m
+[31m[-	-][m	[31m[-x-][m [31m[-+=-][m[32m{+IDENT+}[m
+[32m{+>+}[m [31m[-(9*-8)/a-][m [31m[-+-][m [31m[-3-][m [31m[---][m [31m[-(100-][m [31m[-%-][m [31m[-7)-][m 	[31m[-		-][m [31m[-C-][m[32m{+GTR+}[m
+[32m{+0  +}[m [31m[-Comment-][m
+[31m[-		x-][m [31m[-%=-][m [31m[-4-][m [31m[-			-][m [31m[-C-][m [31m[-Comment-][m
+[31m[-	-][m	[31m[-println(x-][m [31m[-+-][m[32m{+INT_LIT+}[m
+[32m{+{+}[m [31m[-3)-][m [31m[-			-][m [31m[-C-][m [31m[-Comment-][m
+[31m[-	}-][m [31m[-			-][m [31m[-C-][m [31m[-Comme-][m[32m{+ 	 LBRACE+}[m
+[32m{+         	 NEWLINE+}[m
+[32m{+x        	 IDENT+}[m
+[32m{++=       	 ADD_ASSIGN+}[m
+[32m{+(        	 LPAREN+}[m
+[32m{+9        	 INT_LIT+}[m
+[32m{+*        	 MUL+}[m
+[32m{+-        	 SUB+}[m
+[32m{+8        	 INT_LIT+}[m
+[32m{+)        	 RPAREN+}[m
+[32m{+/        	 QUO+}[m
+[32m{+a        	 IDENT+}[m
+[32m{++        	 ADD+}[m
+[32m{+3        	 INT_LIT+}[m
+[32m{+-        	 SUB+}[m
+[32m{+(        	 LPAREN+}[m
+[32m{+100      	 INT_LIT+}[m
+[32m{+%        	 REM+}[m
+[32m{+7        	 INT_LIT+}[m
+[32m{+)        	 RPAREN+}[m
+[32m{+         	 NEWLINE+}[m
+[32m{+x        	 IDENT+}[m
+[32m{+%=       	 REM_ASSIGN+}[m
+[32m{+4        	 INT_LIT+}[m
+[32m{+         	 NEWLINE+}[m
+[32m{+pri+}[mnt[32m{+ln  	 PRINTLN+}[m
+[32m{+(        	 LPAREN+}[m
+[32m{+x        	 IDENT+}[m
+[32m{++        	 ADD+}[m
+[32m{+3        	 INT_LIT+}[m
+[32m{+)        	 RPAREN+}[m
+[32m{+         	 NEWLINE+}[m
+[32m{+}        	 RBRACE+}[m
+[32m{+         +}[m	[32m{+ NEWLINE+}[m
+println[32m{+  	 PRINTLN+}[m
+([32m{+        	 LPAREN+}[m
+"[32m{+        	 QUOTA+}[m
+Finish[31m[-")-][m[32m{+  +}[m 	[32m{+ STRING+}[m
+[32m{+"        +}[m	[32m{+ QUOTA+}[m
+[32m{+)        +}[m	 [31m[-C-][m[32m{+RPAREN+}[m
+ [31m[-Comment-][m[32m{+        	 NEWLINE+}[m
+}        	 RBRACE[m
 
-=================+===============
-Correct rate: 81.81818181818181%
-Obtained/Total scores: 90.0/110
+Finish scanning,[m
+total line: 47[m
+comment line: 1[31m[-6-][m[32m{+1+}[m
+
+=================+=======================================
+Correct rate: 0.0%
+Obtained/Total scores: 0.0/110
