@@ -14,6 +14,7 @@
 /* Define regular expression label */
 letter          [a-zA-Z_]
 digit           [0-9]
+symbol          [+=-~!@#$%^&*()<>]
 id              {letter}+({letter}|{digit})*
 inumber         {digit}+
 fnumber         ({digit}*\.{digit}+)
@@ -32,8 +33,8 @@ comment         "/*"[^("*/"|"\n")]*"*/"
 <print>\"/{id}      { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <println>\"/{id}    { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <end>{id}/\"        { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN 0; }
-<comment>[^("*/"|"\n")]*"*/"    { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; }
-<comment>[^("*/"|"\n")]*"\n"     { printf("%s%-8s\t %s\n", yytext, "", "C Comment"); comment_num++; line_num++; BEGIN comment; }
+<comment>([^("*/"|"\n")])*"*/"    { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; }
+<comment>([^("*/"|"\n")]|{symbol})*"\n"     { printf("%s%-8s\t %s\n", yytext, "", "C Comment"); comment_num++; line_num++; BEGIN comment; }
 
 "\n"        { line_num++; printf("%-8s \t NEWLINE\n", ""); }
 "+"         { printf("%-8s \t %s\n", yytext, "ADD"); }
@@ -85,7 +86,7 @@ comment         "/*"[^("*/"|"\n")]*"*/"
 {fnumber}       { printf("%-8s \t %s\n", yytext, "FLOAT_LIT"); }
 {inumber}       { printf("%-8s \t %s\n", yytext, "INT_LIT"); }
 {cppcomment}    { printf("%-8s \t %s\n", yytext, "C++ Comment"); comment_num++; }
-{comment}       { printf("%-8s \t %s\n", yytext, "C Comment"); comment_num++; }
+{comment}       { printf("%-8s    \t %s\n", yytext, "C Comment"); comment_num++; }
 {commentNline}  { printf("%-s%8s\t %s\n", yytext, "", "C Comment"); comment_num++; line_num++; BEGIN comment; }
 {ws}            {;}
 
