@@ -8,6 +8,7 @@
     #define YY_NO_INPUT
 
     int line_num = 0;
+    int newest_pos = -1;
     int comment_num = 0;
 %}
 
@@ -33,8 +34,8 @@ comment         "/*"[^("*/"|"\n")]*"*/"
 <print>\"/{id}      { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <println>\"/{id}    { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <end>{id}/\"        { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN 0; }
-<comment>([^("*/"|"\n")])*"*/"    { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; }
-<comment>([^("*/"|"\n")]|{symbol})*"\n"     { printf("%s%-8s\t %s\n", yytext, "", "C Comment"); comment_num++; line_num++; BEGIN comment; }
+<comment>([^("*/"|"\n")])*"*/"    { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; newest_pos = line_num; }
+<comment>([^("*/"|"\n")]|{symbol})*"\n"     { printf("%s%-8s\t %s\n", yytext, "", "C Comment"); comment_num++; BEGIN comment; newest_pos = line_num; line_num++; }
 
 "\n"        { line_num++; printf("%-8s \t NEWLINE\n", ""); }
 "+"         { printf("%-8s \t %s\n", yytext, "ADD"); }
@@ -85,9 +86,19 @@ comment         "/*"[^("*/"|"\n")]*"*/"
 {id}            { printf("%-8s \t %s\n", yytext, "IDENT"); }
 {fnumber}       { printf("%-8s \t %s\n", yytext, "FLOAT_LIT"); }
 {inumber}       { printf("%-8s \t %s\n", yytext, "INT_LIT"); }
-{cppcomment}    { printf("%-8s \t %s\n", yytext, "C++ Comment"); comment_num++; }
-{comment}       { printf("%-8s    \t %s\n", yytext, "C Comment"); comment_num++; }
-{commentNline}  { printf("%-s%8s\t %s\n", yytext, "", "C Comment"); comment_num++; line_num++; BEGIN comment; }
+{cppcomment}    { printf("%-8s \t %s\n", yytext, "C++ Comment");
+                    if(newest_pos != line_num) comment_num++;
+                    newest_pos = line_num;
+                }
+{comment}       { printf("%-8s    \t %s\n", yytext, "C Comment"); 
+                    if(newest_pos != line_num) comment_num++;
+                    newest_pos = line_num;
+                }
+{commentNline}  { printf("%s        	 %s\n", yytext, "C Comment"); BEGIN comment; 
+                    if(newest_pos != line_num) comment_num++;
+                    newest_pos = line_num;
+                    line_num++;
+                }
 {ws}            {;}
 
 <<EOF>>             { line_num++; yyterminate(); }
