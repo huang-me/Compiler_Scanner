@@ -34,7 +34,12 @@ comment         "/*"[^("*/"|"\n")]*"*/"
 <print>\"/{id}      { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <println>\"/{id}    { printf("%-8s \t %s\n", yytext, "QUOTA"); BEGIN end; }
 <end>{id}/\"        { printf("%-8s \t %s\n", yytext, "STRING"); BEGIN 0; }
-<comment>([^("*/"|"\n")])*"*/"    { printf("%-8s \t %s\n", yytext, "C Comment"); BEGIN 0; comment_num++; newest_pos = line_num; }
+<comment>([^("*/"|"\n")])*"*/"    { 
+    for(int i=0;i<yyleng;i++) {
+        printf("%c",yytext[i]);
+    }
+    printf("%-6s \t %s\n", yytext+yyleng, "C Comment"); BEGIN 0; comment_num++; newest_pos = line_num; 
+}
 <comment>([^("*/"|"\n")]|{symbol})*"\n"     { printf("%s%-8s\t %s\n", yytext, "", "C Comment"); comment_num++; BEGIN comment; newest_pos = line_num; line_num++; }
 
 "\n"        { line_num++; printf("%-8s \t NEWLINE\n", ""); }
